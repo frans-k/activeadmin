@@ -88,7 +88,7 @@ module ActiveAdmin
     # Deals with +ControllerAction+ instances
     # Builds one route for each HTTP verb passed in
     def build_action(action)
-      build_route(action.http_verb, action.name)
+      build_route(action.http_verb, action.name, id: /([^\/])+?/, format: /html/)
     end
 
     def build_route(verbs, *args)
